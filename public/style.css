@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+    transition: 0.5s all;
+}
+body{
+    height: 100vh;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+ 
+
+.company-name{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 40px;
+    margin-top: 10px;
+}
+.nav-links{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+.nav-links li{
+    list-style: none;
+    font-family: "Raleway", sans-serif;
+    display: flex;
+    justify-content: center;
+}
+.nav-links li:hover{
+    cursor: pointer;
+    color: #136f63;
+}
+
+.nav-links li a{
+    color: #232c33;
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+}
+.nav-links li a:hover{
+    cursor: pointer;
+    color: #136f63;
+}
+
+
+
+.content1{
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+.content1 #left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffe8;
+    width: 40%;
+    height: 500px;
+    padding: 0px 30px;
+    flex-direction: column;
+    
+}
+.content1 #left h3{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 30px;
+    margin-bottom: 40px;
+    color: #232c33;
+}
+.content1 #left p{
+    font-family: "Rubik", sans-serif;
+    line-break: 300px;
+    font-size: 20px;
+    color: #232c33;
+}
+.content1 #right{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 70%;
+}
+#crochet-image{
+    height: 100%;
+    width: 100%;
+}
+#explore-button{
+    border: 1px solid #efb9cb;
+    padding: 10px 50px;
+    background-color: transparent;
+    border-radius: 20px;
+    margin-top: 30px;
+    color: #efb9cb;
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+#explore-button:hover{
+    cursor: pointer;
+    background-color: #efb9cb;
+    color: #ffffe8;
+}
+
+.content2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+    padding: 0px 10px;
+    overflow-x: scroll;
+}
+.ad-img{
+    height: 500px;
+    border-radius: 40px;
+    margin: 10px;
+}
+
+.content3{
+    display: flex;
+    gap: 10px;
+    padding: 0px;
+    width: 100%;
+    height: 500px;
+    margin-top: 125px;
+    margin-bottom: 125px;
+
+}
+.make-boquet{
+    display: flex;
+    height: 100%;
+    width: 50%;
+}
+.make-boquet #left{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffe8;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.make-boquet #left h3{
+    font-size: 30px;
+    font-family: "Nunito Sans", sans-serif;
+    color: #232c33 ;
+    margin: 0px 10px 10px 10px;
+}
+.make-boquet #left p{
+    color: #232c33;
+    font-family: "Rubik", sans-serif;
+    margin: 10px 0px 10px 10px;
+}
+.make-boquet #right{
+    width: 50%;
+    height: 100%;
+}
+.make-boquet #right img{
+    height: 100%;
+}
+
+#make-boquet-button{
+    padding: 10px 50px;
+    margin: 20px 10px;
+    border: 1px solid #efb9cb;
+    color: #efb9cb;
+    background: transparent;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+#make-boquet-button:hover{
+    color: #ffffe8;
+    background-color: #efb9cb;
+    cursor: pointer;
+}
+
+/* others start here */
+
+.others{
+    display: flex;
+    height: 100%;
+    width: 50%;
+
+}
+.others #left{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffe8;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.others #right{
+    width: 50%;
+    height: 100%;
+
+}
+.others #right img{
+    height: 100%;
+}
+.others #left h3{
+    font-size: 25px;
+    font-family: "Nunito Sans", sans-serif;
+    color: #232c33 ;
+    margin: 0px 10px 10px 10px;
+}
+.others #left p{
+    color: #232c33;
+    font-family: "Rubik", sans-serif;
+    margin: 10px 0px 10px 10px;
+}
+#others-button{
+    padding: 10px 50px;
+    margin: 20px 10px;
+    border: 1px solid #efb9cb;
+    color: #efb9cb;
+    background: transparent;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+#others-button:hover{
+    color: #ffffe8;
+    background-color: #efb9cb;
+    cursor: pointer;
+}
+
+footer{
+    margin-top: 40px;
+    background-color: #232c33;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contacts h3{
+    display: flex;
+    justify-content: center;
+    /* transform: translateX(20px); */
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 2rem;
+    color: #ffffe8;
+}
+.contacts ul{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    list-style: none;
+}
+.contacts li{
+    padding: 10px;
+    background-color: #ffffe8;
+    border-radius: 30px;
+}
+.contacts p{
+    display: flex;
+    justify-content: center;
+    color: #ffffe8;
+}
+.contacts li :hover{
+    color: #136f63;
+    cursor: pointer;
+}

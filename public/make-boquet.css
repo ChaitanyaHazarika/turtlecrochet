@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    height: 100vh;
+}
+header{
+    width: 100%;
+    height: 200px;
+    background-color:#FFFFE8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header h1{
+    font-size: 60px;
+    font-family: "Nunito Sans", sans-serif;
+}
+.wrapper{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.left-section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+.left-section img{
+    height: 80%;
+    
+}
+.choose-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 50%;
+    height: 100%;
+    
+}
+section p{
+    
+    font-size: 15px;
+}
+section input{
+    width: 300px;
+    font-size: 1rem;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+
+}
+
+.submit{
+    padding: 10px 60px;
+    background-color: transparent;
+    border: 1px solid #232c33;
+    font-size: 1rem;
+    border-radius: 10px;
+
+}
+[data-price]{
+    font-size: 20px;
+    font-family: "Raleway", sans-serif;
+
+}
+.submit:hover{
+    color: #FFFFE8;
+    background-color: #232c33;
+}
+.link{
+    background-color: transparent;
+    border: 1px solid #232c33;
+    padding: 10px 60px;
+}
+.dropdown{
+    padding: 10px 100px;
+    font-size: 1rem;
+}
+
+#flower-dropdowns{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px 1fr));
+}
