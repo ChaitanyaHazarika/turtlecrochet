@@ -40,11 +40,9 @@ header h1{
 .choose-section{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: start;
     width: 50%;
     height: 100%;
-    
+    margin-top: 10vh;
 }
 section p{
     
@@ -88,5 +86,20 @@ section input{
 
 #flower-dropdowns{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(150px 1fr));
+}
+[data-color]{
+    padding: 20px;
+    border-radius: 40px;
+    border: 0;
+    box-shadow: inset 1px 1px 10px #232c33;
+    background-color: green;
+
+}
+[data-color]:hover{
+    border: 3px solid #136f63;
+}
+[data-color-container]{
+    display: flex;
+    gap: 10px;
 }
