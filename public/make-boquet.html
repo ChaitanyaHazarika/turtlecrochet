@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make a boquet</title>
     <link rel="stylesheet" href="make-boquet.css">
-    <script type="module" src="make-boquet.js" defer></script>
 </head>
 
 <body>
@@ -25,23 +24,105 @@
                 <input type="text" placeholder="No. of flowers" data-flowers><br><br>
 
                 <button class="submit" id="submit">Submit</button>
+                <button data-reset>Reset</button>
             </section>
             <section id="flower-dropdowns" data-flower-dropdown-container>
-            </section>
-            <section>
-                <button class="newspaper-wraps-buttons"></button>
-            </section>
+                <section>
+                    <p data-flower-count>Flower 1</p>
+                    <section data-color-container>
+                        <select name="" id="test" class="dropdown" data-select-dropdown>
+                            <option value="" data-option></option>
+                        </select>
+                        <button data-color></button>
 
+                    </section>
+
+                </section>
+                <section>
+                    <p data-flower-count>Flower 1</p>
+                    <section data-color-container>
+                        <select name="" id="test" class="dropdown" data-select-dropdown>
+                            <option value="" data-option></option>
+                        </select>
+                        <button data-color></button>
+
+                    </section>
+
+                </section>
+                <section>
+                    <p data-flower-count>Flower 1</p>
+                    <section data-color-container>
+                        <select name="" id="test" class="dropdown" data-select-dropdown>
+                            <option value="" data-option></option>
+                        </select>
+                        <button data-color></button>
+
+                    </section>
+
+                </section>
+                <section>
+                    <p data-flower-count>Flower 1</p>
+                    <section data-color-container>
+                        <select name="" id="test" class="dropdown" data-select-dropdown>
+                            <option value="" data-option></option>
+                        </select>
+                        <button data-color></button>
+
+                    </section>
+
+                </section>
+                <section>
+                    <p data-flower-count>Flower 1</p>
+                    <section data-color-container>
+                        <select name="" id="test" class="dropdown" data-select-dropdown>
+                            <option value="" data-option></option>
+                        </select>
+                        <button data-color></button>
+
+                    </section>
+
+                </section>
+                <section>
+                    <p data-flower-count>Flower 1</p>
+                    <section data-color-container>
+                        <select name="" id="test" class="dropdown" data-select-dropdown>
+                            <option value="" data-option></option>
+                        </select>
+                        <button data-color></button>
+
+                    </section>
+
+                </section>
+                <section>
+                    <p data-flower-count>Flower 1</p>
+                    <section data-color-container>
+                        <select name="" id="test" class="dropdown" data-select-dropdown>
+                            <option value="" data-option></option>
+                        </select>
+                        <button data-color></button>
+
+                    </section>
+                    <button data-submit-flower>Submit</button>
+                </section>
+
+
+            </section>
+            <section id="total-section">
+                <h4 id="total-heading">Total</h4>
+                <p>Tulip 2x</p>
+
+            </section>
         </div>
     </div>
     <template data-dropdowns>
         <section>
             <p data-flower-count>Flower 1</p>
             <section data-color-container>
-                <select name="" id="" class="dropdown" data-select-dropdown>
+                <select name="" id="test" class="dropdown" data-select-dropdown>
                     <option value="" data-option></option>
                 </select>
                 <button data-color></button>
+
             </section>
 
         </section>
@@ -64,18 +145,24 @@
         const app = initializeApp(firebaseConfig);
         const dbRef = ref(getDatabase());
         const submitButton = document.getElementById('submit');
-        const noOfFlowers = document.querySelector('[data-flowers]')
+        const noOfFlowersInput = document.querySelector('[data-flowers]')
         const dropdownTemplate = document.querySelector('[data-dropdowns]')
         const dropdownContainer = document.querySelector('[data-flower-dropdown-container]')
+        const resetButton = document.querySelector('[data-reset]')
+
         var flowerNumber = 0
         var counter = 0
         var flowerData;
         var flowerKeys;
+        var noOfFlowers;
         await get(child(dbRef, '/Flowers')).then((snapshot) => {
-            console.log(snapshot.val());
+            flowerData = snapshot.val()
+            flowerKeys = Object.keys(flowerData)
+            noOfFlowers = flowerKeys.length
+
             submitButton.addEventListener('click', () => {
-                counter = noOfFlowers.value
-                console.log(counter);
+                counter = noOfFlowersInput.value
+
                 for (let i = 0; i < counter; i++) {
                     flowerNumber = i
                     flowerNumber++
@@ -83,31 +170,31 @@
                     const dropdownFlowerNumber = dropdowns.querySelector('[data-flower-count]')
                     dropdownFlowerNumber.textContent = `Flower ${flowerNumber}`
 
-                    flowerData = snapshot.val()
 
-                    console.log(typeof flowerData);
-                    flowerKeys = Object.keys(flowerData)
                     flowerKeys.forEach(function (flower) {
-
                         const options = dropdowns.querySelector('[data-option]')
                         const optionsContainer = dropdowns.querySelector('[data-select-dropdown]')
                         const optionsSelect = options.cloneNode()
-                        console.log(optionsSelect);
+                        optionsSelect.setAttribute('value', flower)
                         optionsSelect.textContent = `${flowerData[flower].name}  -Rs${flowerData[flower].price}`
                         optionsContainer.append(optionsSelect)
-
                     })
                     dropdownContainer.append(dropdowns)
 
                 }
 
             })
+            resetButton.addEventListener('click', () => {
+                counter = 0
+                dropdownContainer.innerHTML = ""
+            })
+
+
         })
 
 
 
 
-        console.log("hello");
     </script>
 </body>
 

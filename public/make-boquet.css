@@ -73,6 +73,7 @@ section input{
 .submit:hover{
     color: #FFFFE8;
     background-color: #232c33;
+    cursor: pointer;
 }
 .link{
     background-color: transparent;
@@ -92,14 +93,48 @@ section input{
     padding: 20px;
     border-radius: 40px;
     border: 0;
-    box-shadow: inset 1px 1px 10px #232c33;
     background-color: green;
 
 }
 [data-color]:hover{
-    border: 3px solid #136f63;
+    border: 3px solid #232c33;
+    cursor: pointer;
+    padding: 17px;
 }
 [data-color-container]{
     display: flex;
     gap: 10px;
+}
+[data-reset]{
+    padding: 10px 60px;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 1px solid #232c33;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+[data-reset]:hover{
+    background-color: #232c33;
+    color: white;
+    cursor: pointer;
+}
+#total-heading{
+    font-size: 3rem;
+    font-family: "Nunito Sans", sans-serif;
+    margin: 20px 0px 0px 0px;
+}
+[data-submit-flower]{
+    padding: 10px 60px;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 1px solid #232c33;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-top: 30px;
+    
+}
+[data-submit-flower]:hover{
+    color: white;
+    background-color: #232c33;
+    
 }
