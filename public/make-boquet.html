@@ -6,114 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make a boquet</title>
     <link rel="stylesheet" href="make-boquet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <header>
         <h1>Customise | &#x2728;</h1>
-
     </header>
+    <div data-alert>
+        <h3>Added to cart &#10003;</h3>
+        <p>Your boquet has been added to cart</p>
+        <button data-cart-view>View Cart</button>
+        <button data-close-alert>Close</button>
+    </div>
     <div class="wrapper">
+        
         <div class="left-section">
+            
             <img src="make-boquet.jpg">
             <h3 data-price></h3>
         </div>
         <div class="choose-section">
             <section>
                 <p>No. of flowers including accesories: </p>
-                <input type="text" placeholder="No. of flowers" data-flowers><br><br>
+                <input type="number" placeholder="No. of flowers" data-flowers><br><br>
 
                 <button class="submit" id="submit">Submit</button>
                 <button data-reset>Reset</button>
             </section>
             <section id="flower-dropdowns" data-flower-dropdown-container>
-                <section>
-                    <p data-flower-count>Flower 1</p>
-                    <section data-color-container>
-                        <select name="" id="test" class="dropdown" data-select-dropdown>
-                            <option value="" data-option></option>
-                        </select>
-                        <button data-color></button>
-
-                    </section>
-
-                </section>
-                <section>
-                    <p data-flower-count>Flower 1</p>
-                    <section data-color-container>
-                        <select name="" id="test" class="dropdown" data-select-dropdown>
-                            <option value="" data-option></option>
-                        </select>
-                        <button data-color></button>
-
-                    </section>
-
-                </section>
-                <section>
-                    <p data-flower-count>Flower 1</p>
-                    <section data-color-container>
-                        <select name="" id="test" class="dropdown" data-select-dropdown>
-                            <option value="" data-option></option>
-                        </select>
-                        <button data-color></button>
-
-                    </section>
-
-                </section>
-                <section>
-                    <p data-flower-count>Flower 1</p>
-                    <section data-color-container>
-                        <select name="" id="test" class="dropdown" data-select-dropdown>
-                            <option value="" data-option></option>
-                        </select>
-                        <button data-color></button>
-
-                    </section>
-
-                </section>
-                <section>
-                    <p data-flower-count>Flower 1</p>
-                    <section data-color-container>
-                        <select name="" id="test" class="dropdown" data-select-dropdown>
-                            <option value="" data-option></option>
-                        </select>
-                        <button data-color></button>
-
-                    </section>
-
-                </section>
-                <section>
-                    <p data-flower-count>Flower 1</p>
-                    <section data-color-container>
-                        <select name="" id="test" class="dropdown" data-select-dropdown>
-                            <option value="" data-option></option>
-                        </select>
-                        <button data-color></button>
-
-                    </section>
-
-                </section>
-                <section>
-                    <p data-flower-count>Flower 1</p>
-                    <section data-color-container>
-                        <select name="" id="test" class="dropdown" data-select-dropdown>
-                            <option value="" data-option></option>
-                        </select>
-                        <button data-color></button>
-
-                    </section>
-                    <button data-submit-flower>Submit</button>
-                </section>
-
-
+              
+            </section>
+            <section id="wrap-selection" data-wrap-selection-container>
             </section>
             <section id="total-section">
-                <h4 id="total-heading">Total</h4>
-                <p>Tulip 2x</p>
-
+                <h4 data-total-amount>Total</h4>
+                <div></div>
+                <button data-add-to-cart>Add to cart</button><br>
+                <i class="fa-solid fa-arrow-left fa-lg" style="color: #232c33;" onclick="window.location = 'index.html'" data-back-arrow></i>
             </section>
         </div>
     </div>
+
+
+
+
     <template data-dropdowns>
         <section>
             <p data-flower-count>Flower 1</p>
@@ -121,16 +58,18 @@
                 <select name="" id="test" class="dropdown" data-select-dropdown>
                     <option value="" data-option></option>
                 </select>
-                <button data-color></button>
-
             </section>
 
         </section>
 
     </template>
+    <template data-wrap-template>
+
+    </template>
     <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js'
-        import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+        import { getDatabase, ref, child, get, set} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+        
         const firebaseConfig = {
             apiKey: "AIzaSyCkDL6o5zIadycIqJoROr48mqUB3EkZab0",
             authDomain: "mikutoys-d47de.firebaseapp.com",
@@ -149,12 +88,23 @@
         const dropdownTemplate = document.querySelector('[data-dropdowns]')
         const dropdownContainer = document.querySelector('[data-flower-dropdown-container]')
         const resetButton = document.querySelector('[data-reset]')
-
+        const totalAmount = document.querySelector('[data-total-amount]')
+        const addToCart = document.querySelector('[data-add-to-cart]')
+        const alert = document.querySelector('[data-alert]')
+        const viewCart = document.querySelector('[data-cart-view]')
+        const closeAlert = document.querySelector('[data-close-alert]')
         var flowerNumber = 0
         var counter = 0
         var flowerData;
         var flowerKeys;
         var noOfFlowers;
+        var amountTotal = 0
+        var wrapData;
+
+
+        totalAmount.textContent = `Total: Rs. ${amountTotal}`
+        var f;
+        var price;
         await get(child(dbRef, '/Flowers')).then((snapshot) => {
             flowerData = snapshot.val()
             flowerKeys = Object.keys(flowerData)
@@ -180,15 +130,34 @@
                         optionsContainer.append(optionsSelect)
                     })
                     dropdownContainer.append(dropdowns)
-
+                    
                 }
+                const dropdown = document.querySelectorAll('.dropdown')
+                    dropdown.forEach((e)=>{
+                        e.addEventListener('change', (x) =>{
+                            console.log(x.target.value);
+                            f = x.target.value
+                            console.log(flowerData[f].price);
+                            price = flowerData[f].price
+                            amountTotal = amountTotal+price
+                            totalAmount.textContent = `Total: Rs. ${amountTotal}`
 
+                        })
+                    })
+                
+                addToCart.addEventListener('click', () =>{
+                    alert.style.display= "block"
+                })
+                resetButton.addEventListener('click', () =>{
+                    dropdownContainer.innerHTML=""
+                    counter = 0
+                    flowerNumber = 0
+                })
+                closeAlert.addEventListener('click', () =>{
+                    alert.style.display= "none"
+                })
             })
-            resetButton.addEventListener('click', () => {
-                counter = 0
-                dropdownContainer.innerHTML = ""
-            })
-
+        
 
         })
 

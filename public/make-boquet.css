@@ -2,29 +2,33 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-body{
-    height: 100vh;
+body {
+    width: 100vw;
 }
-header{
+
+header {
     width: 100%;
     height: 200px;
-    background-color:#FFFFE8;
+    background-color: #FFFFE8;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-header h1{
+
+header h1 {
     font-size: 60px;
     font-family: "Nunito Sans", sans-serif;
 }
-.wrapper{
+
+.wrapper {
     height: 100vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.left-section{
+
+.left-section {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -33,31 +37,35 @@ header h1{
     height: 100%;
     width: 50%;
 }
-.left-section img{
+
+.left-section img {
     height: 80%;
-    
+
 }
-.choose-section{
+
+.choose-section {
     display: flex;
     flex-direction: column;
     width: 50%;
     height: 100%;
     margin-top: 10vh;
 }
-section p{
-    
+
+section p {
+
     font-size: 15px;
 }
-section input{
+
+section input {
     width: 300px;
     font-size: 1rem;
     border-top: 0px;
     border-right: 0px;
     border-left: 0px;
-
+   
 }
 
-.submit{
+.submit {
     padding: 10px 60px;
     background-color: transparent;
     border: 1px solid #232c33;
@@ -65,47 +73,55 @@ section input{
     border-radius: 10px;
 
 }
-[data-price]{
+
+[data-price] {
     font-size: 20px;
     font-family: "Raleway", sans-serif;
 
 }
-.submit:hover{
+
+.submit:hover {
     color: #FFFFE8;
     background-color: #232c33;
     cursor: pointer;
 }
-.link{
+
+.link {
     background-color: transparent;
     border: 1px solid #232c33;
     padding: 10px 60px;
 }
-.dropdown{
+
+.dropdown {
     padding: 10px 100px;
     font-size: 1rem;
 }
 
-#flower-dropdowns{
+#flower-dropdowns {
     display: grid;
     grid-template-rows: repeat(auto-fill, minmax(150px 1fr));
 }
-[data-color]{
+
+[data-color] {
     padding: 20px;
     border-radius: 40px;
     border: 0;
     background-color: green;
 
 }
-[data-color]:hover{
+
+[data-color]:hover {
     border: 3px solid #232c33;
     cursor: pointer;
     padding: 17px;
 }
-[data-color-container]{
+
+[data-color-container] {
     display: flex;
     gap: 10px;
 }
-[data-reset]{
+
+[data-reset] {
     padding: 10px 60px;
     font-size: 1rem;
     background-color: transparent;
@@ -113,17 +129,59 @@ section input{
     border-radius: 10px;
     margin-left: 5px;
 }
-[data-reset]:hover{
+
+[data-reset]:hover {
     background-color: #232c33;
     color: white;
     cursor: pointer;
 }
-#total-heading{
+
+#total-heading {
     font-size: 3rem;
     font-family: "Nunito Sans", sans-serif;
     margin: 20px 0px 0px 0px;
 }
-[data-submit-flower]{
+
+
+[data-total-amount] {
+    font-size: 2rem;
+    font-family: "Nunito Sans", sans-serif;
+    margin-bottom: 0;
+}
+
+[data-alert] {
+    position: fixed;
+    right: 40px;
+    top: 20px;
+    background-color: white;
+    padding: 20px 40px;
+    font-family: "Raleway", sans-serif;
+    transition: opacity 1s ease-out;
+    display: none;
+    z-index: 5;
+    border-radius: 10px;
+}
+
+[data-alert] button {
+    padding: 10px 30px;
+    font-size: 1rem;
+    background-color: transparent;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-top: 30px;
+}
+
+[data-alert] button:hover {
+    color: white;
+    cursor: pointer;
+}
+
+[data-cart-view] {
+    border: 1px solid #efb9cb;
+    color: #efb9cb;
+}
+
+[data-add-to-cart] {
     padding: 10px 60px;
     font-size: 1rem;
     background-color: transparent;
@@ -131,10 +189,101 @@ section input{
     border-radius: 10px;
     margin-left: 5px;
     margin-top: 30px;
-    
+    margin-top: 10px;
 }
-[data-submit-flower]:hover{
+
+[data-add-to-cart]:hover {
     color: white;
     background-color: #232c33;
-    
+    cursor: pointer;
+}
+
+[data-submit-flower]:hover {
+    color: white;
+    background-color: #232c33;
+}
+
+[data-close-alert] {
+    border: 1px solid #232c33
+}
+
+[data-close-alert]:hover {
+    background-color: #232c33;
+}
+
+[data-cart-view]:hover {
+    background-color: #efb9cb;
+}
+[data-back-arrow]{
+    margin: 40px 10px;
+    text-decoration: none;
+}
+[data-back-arrow]::after{
+    content: "Home page";
+    font-size: 15px;
+    padding: 0px 10px;
+    letter-spacing: 3px;
+}
+[data-back-arrow]:hover{
+    cursor: pointer;
+}
+
+
+/* responsive part aka the part where i died almost */
+
+@media(max-width: 1440px){
+    .choose-section{
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media(max-width: 1290px){
+    .left-section img{
+        height: 700px;
+    }
+}
+@media(max-width: 1050px){
+    .left-section img{
+        height: 500px;
+    }
+}
+@media(max-width: 775px){
+    .wrapper{
+        flex-direction: column;
+        height: 100vh;
+    }
+    .left-section, .choose-section{
+        width: 100vw;
+    }
+
+}
+@media(max-width: 400px){
+    .left-section img{
+        height: 400px;
+        margin-top: 40px;
+    }
+    header h1{
+        font-size: 40px;
+    }
+    .dropdown{
+        width: 20%;;
+    }
+    #flower-dropdowns{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    .choose-section input{
+        width: 50%;
+    }
+    [data-reset], #submit{
+        padding: 10px 40px;
+    }
+}
+@media(max-width: 360px){
+    [data-alert]{
+        right: 20px;
+    }
 }
