@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <div class="wrapper">
+        
+        <div class="left">
+          
+            <form action="/checkout">
+                <h2 class="heading">Checkout</h2>
+                <p>Email: </p>
+                <input type="email" data-email required class="form-input" placeholder="Email"><br>
+                <p>Instagram: </p>
+                <input type="text" data-instagram placeholder="Instagram ID for customisation" class="form-input"><br>
+                <p>Phone number: </p>
+                <input type="number" data-phonenumber required placeholder="Phone Number" class="form-input"><br>
+                <section>
+                    <p>Full Address: </p>
+                    <input type="text" data-address placeholder="Address Full" class="form-input" required><br>
+                    <p>Pin code: </p>
+                    <input type="number" data-address-pincode placeholder="Pin Code" class="form-input" required><br>
+                    <p>Country: </p>
+                    <input type="text" data-address-country placeholder="Country" readonly class="form-input"><br>
+                    <p>State: </p>
+                    <input type="text" data-address-state placeholder="State" readonly class="form-input"><br>
+                </section>
+            </form>
+        </div>
+
+
+
+        <div class="right">
+            <div data-items-container>
+                <section>
+                    <img src="make-boquet.jpg" alt="" data-item-image>
+                    <section data-item-info>
+                        <h4 data-heading-item>Boquet</h4>
+                        <p data-item-count></p>
+                    </section>
+                 
+                </section>
+            </div>
+        </div>
+
+    </div>
+   
+</body>
+</html>

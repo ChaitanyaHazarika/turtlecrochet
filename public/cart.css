@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+}
+.wrapper{
+    display: flex;
+    height: 100vh;
+}
+.heading{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.left, .right{
+    width: 50%;
+    height: 100%;
+}
+.left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-input{
+    padding: 10px 30px;
+    width: 50%;
+    font-size: 1rem;
+    margin-top: 1rem;
+    font-family: "Raleway", sans-serif;
+}
+.left section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.left form p, .left form section p{
+    font-family: "Raleway", sans-serif;
+}
+.right{
+    background-color: #FFFFE8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+[data-items-container]{
+    width: 100%;
+   
+}
+[data-items-container] section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: "Nunito Sans", sans-serif;
+}
+[data-item-image]{
+    height: 70px;
+}
+[data-item-info]{
+    width: ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
